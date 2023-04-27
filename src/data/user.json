@@ -1,0 +1,23 @@
+[
+    {
+        "user": "Elon Mask",
+        "tweets": "777",
+        "followers": "100500",
+        "avatar": "url.jpg",
+        "id": "1"
+    },
+    {
+        "user": "Keanu reeves",
+        "tweets": "555",
+        "followers": "800300",
+        "avatar": "url2.jpg",
+        "id": "2"
+    },
+    {
+        "user": "Joe Biden",
+        "tweets": "333",
+        "followers": "1000001",
+        "avatar": "url3.jpg",
+        "id": "3"
+    }
+]
