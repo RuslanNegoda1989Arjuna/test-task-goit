@@ -12,11 +12,8 @@ const HomePage = () => {
                 <HeaderImage/>
                 <div className={styles.welcome}>
                     <h1 className={styles.title}>Welcome to Twitt</h1>
-                </div>
-            
-               
-            </div>
-            
+                </div>           
+            </div>            
         </div>
     )
 }
