@@ -1,3 +1,15 @@
+.list {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 100px;
+        margin-top: 32px;
+        gap: 28px;
+}
+
+
 .avatarka {
     position: absolute;
     left: 150px;
@@ -31,6 +43,7 @@
 .btnWrapper {
 
     margin-top: 26px;
+    margin-bottom: 36px;
     display: flex;
     flex-direction: row;
     justify-content: center;
