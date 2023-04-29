@@ -52,7 +52,7 @@ const handleClick = async (id, isFollow) => {
   };
 
     return (<>
-        <Link to='/'>GoBack</Link>
+        <Link className={styles.goback} to='/'>GoBack</Link>
         <ul className={styles.list}>              
             {numFollowers.slice(0, 0 + numPerPage).map(({ id, tweets, followers, isFollow, avatar }) => {
                 
