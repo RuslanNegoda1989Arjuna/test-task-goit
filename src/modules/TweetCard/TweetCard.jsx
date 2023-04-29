@@ -7,14 +7,12 @@ import fetchUsers from "../../tools/Api";
 
 const TweetCard = () => {
     const [numFollowers, setNumFollowers] = useState([]);
-    const [toggleBtn, setToggleBtn] = useState(false);
 
 useEffect(() => {
     try {
       const films = fetchUsers();
 
         films.then(data => {
-          console.log(data)
         return setNumFollowers(data);
       });
     } catch (error) {
@@ -25,20 +23,14 @@ useEffect(() => {
 
 
     const handleClick = (id, num, isFollowing) => {
-        setToggleBtn(!toggleBtn);
         setNumFollowers((prevState) =>
         prevState.map((card) =>
         {
             if (card.id === id) {
-                return !isFollowing ? { ...card, followers: parseInt(card.followers) + 1, isFollowing: toggleBtn}
-                    : { ...card, followers: parseInt(card.followers) - 1, isFollowing: toggleBtn}
+                return !isFollowing ? { ...card, followers: parseInt(card.followers) + 1, isFollowing: true}
+                    : { ...card, followers: parseInt(card.followers) - 1, isFollowing: false}
 
           } return card}
- 
-      
-        
-        //   ? { ...card, followers: parseInt(card.followers) + 1, isFollowing: toggleBtn }
-        //   : card
       ))
 
 
@@ -58,7 +50,8 @@ useEffect(() => {
                         <p className={styles.tweets}>{`${tweets} tweets`}</p>
                             <p className={styles.followers}>{`${numWithCommas} follows`} </p>
                         <div className={styles.btnWrapper}>
-                            <button className={styles.button} onClick={()=>handleClick(id,num,isFollowing)}>{isFollowing ? "Following" : "FOLLOW"}</button>
+                                <button className={`${styles.button} ${isFollowing ? styles.active : ''}`}
+                                    onClick={() => handleClick(id, num, isFollowing)}>{isFollowing ? "FOLLOWING" : "FOLLOW"}</button>
                         </div> 
                     </li>)
                 })}
