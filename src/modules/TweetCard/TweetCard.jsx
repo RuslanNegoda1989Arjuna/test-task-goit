@@ -22,7 +22,7 @@ useEffect(() => {
 
 
 
-    const handleClick = (id, num, isFollowing) => {
+    const handleClick = (id, isFollowing) => {
         setNumFollowers((prevState) =>
         prevState.map((card) =>
         {
@@ -51,7 +51,7 @@ useEffect(() => {
                             <p className={styles.followers}>{`${numWithCommas} follows`} </p>
                         <div className={styles.btnWrapper}>
                                 <button className={`${styles.button} ${isFollowing ? styles.active : ''}`}
-                                    onClick={() => handleClick(id, num, isFollowing)}>{isFollowing ? "FOLLOWING" : "FOLLOW"}</button>
+                                    onClick={() => handleClick(id, isFollowing)}>{isFollowing ? "FOLLOWING" : "FOLLOW"}</button>
                         </div> 
                     </li>)
                 })}
