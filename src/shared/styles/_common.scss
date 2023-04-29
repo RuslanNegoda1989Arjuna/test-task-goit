@@ -4,12 +4,13 @@ body {
 }
 
 .container {
-    padding: 20px;    
+    max-width: 1444px;
+    padding: 20px;
+    margin: 0 auto;    
 }
 .mainBox {
     position: relative;
     min-width: 380px;
-    // height: 460px;
     background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
     box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
     border-radius: 20px;

@@ -6,6 +6,8 @@ import  { fetchAllUsers, putIsFollow } from "../../tools/Api";
 
 const TweetCard = () => {
     const [numFollowers, setNumFollowers] = useState([]);
+    const [numPerPage, setNumPerPage] = useState(3);
+//   const [numDisplayed, setNumDisplayed] = useState(0);
 
 useEffect(() => {
     try {
@@ -40,11 +42,15 @@ const handleClick = async (id, isFollow) => {
   } catch (error) {
     console.log(error);
   }
-};
+    };
+    
+     const handleLoadMore = () => {
+    setNumPerPage(numPerPage + 3);
+  };
 
-    return (          
-            <ul className={styles.list}>              
-            {numFollowers.map(({ id, tweets, followers, isFollow, avatar }) => {
+    return (<>
+        <ul className={styles.list}>              
+            {numFollowers.slice(0, 0 + numPerPage).map(({ id, tweets, followers, isFollow, avatar }) => {
                 
                 const num = parseInt(followers);
                 const numWithCommas = num.toLocaleString('en-US');
@@ -65,7 +71,16 @@ const handleClick = async (id, isFollow) => {
                         </div> 
                     </li>)
                 })}
-            </ul>                                       
+        </ul>
+        {numPerPage + 0 < numFollowers.length && (
+            <div className={styles.btnWrapper}>
+                <button className={styles.loadMore} onClick={handleLoadMore}>Load More</button>
+            </div>
+        
+      )}
+
+    </>          
+            
     )
 }
 
