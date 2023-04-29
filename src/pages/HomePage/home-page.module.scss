@@ -1,6 +1,6 @@
 .title {
     text-align: center;
-    padding: 10px;
+    margin-bottom: 30px;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -11,16 +11,43 @@
 @keyframes flyin {
     0% {
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(-150%);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-100%);
     }
 }
 
+.background {
+    background-image: url('../../images/alexander-shatov-k1xf2D7jWUs-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .welcome {
+    
     padding-top: 95px;
+    padding-bottom: 100px;
     animation: flyin 1s ease forwards;
+    
+}
+.tweetLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.button {
+    background-color: #1DA1F2;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
 }

@@ -2,12 +2,15 @@ import HeaderImage from "../../shared/components/HeaderImage/HeaderImage"
 import Logo from "../../shared/components/Logo/Logo"
 import styles from './tweet-card.module.scss'
 import { useEffect, useState } from "react";
-import  { fetchAllUsers, putIsFollow } from "../../tools/Api";
+import { fetchAllUsers, putIsFollow } from "../../tools/Api";
+import { Link } from "react-router-dom";
+
+
 
 const TweetCard = () => {
     const [numFollowers, setNumFollowers] = useState([]);
     const [numPerPage, setNumPerPage] = useState(3);
-//   const [numDisplayed, setNumDisplayed] = useState(0);
+
 
 useEffect(() => {
     try {
@@ -49,6 +52,7 @@ const handleClick = async (id, isFollow) => {
   };
 
     return (<>
+        <Link to='/'>GoBack</Link>
         <ul className={styles.list}>              
             {numFollowers.slice(0, 0 + numPerPage).map(({ id, tweets, followers, isFollow, avatar }) => {
                 
