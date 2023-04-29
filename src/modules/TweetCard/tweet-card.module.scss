@@ -10,10 +10,35 @@
 }
 
 
+// .avatarka {
+//     position: absolute;
+//     left: 150px;
+//     top: 178px;
+//     border-radius: 50%;
+// }
+
 .avatarka {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #000;
     position: absolute;
-    left: 150px;
-    top: 178px;
+        left: 150px;
+        top: 178px;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.avatarImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
 .tweets {

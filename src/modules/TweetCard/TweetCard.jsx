@@ -38,7 +38,7 @@ useEffect(() => {
 
     return (          
             <ul className={styles.list}>              
-            {numFollowers.map(({ id, tweets, followers, isFollowing }) => {
+            {numFollowers.map(({ id, tweets, followers, isFollowing, avatar }) => {
                 
                 const num = parseInt(followers);
                 const numWithCommas = num.toLocaleString('en-US');
@@ -46,7 +46,11 @@ useEffect(() => {
                     <li key={id} className="mainBox">
                         <Logo />
                         <HeaderImage />
-                        <img className={styles.avatarka} src={Avatar} alt="Avatarka" />
+                        <div className={styles.avatarka}>
+                            <div className={styles.avatarWrapper}>
+                                <img className={styles.avatarImage} src={avatar} alt="Avatarka" />
+                            </div>
+                        </div>                        
                         <p className={styles.tweets}>{`${tweets} tweets`}</p>
                             <p className={styles.followers}>{`${numWithCommas} follows`} </p>
                         <div className={styles.btnWrapper}>
