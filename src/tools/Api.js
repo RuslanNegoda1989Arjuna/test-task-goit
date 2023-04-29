@@ -1,14 +1,20 @@
-import axios from 'axios';
 
-const BASE_URL = 'https://639d73671ec9c6657baa7b37.mockapi.io/api/users';
+import { axiosInstance } from "./axiosInstantce";
 
+export const fetchAllUsers = async () => {
+  try {
+    const { data } = await axiosInstance.get();
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
 
-export default async function fetchUsers() {
-
-    // const url = 'https://639d73671ec9c6657baa7b37.mockapi.io/api/users'
-
-  const response = await axios(BASE_URL);
-
-  const data = response.data;
-  return data;
-}
+export const putIsFollow = async (id, isFollow, newFollowersCount) => {
+  try {
+    const { data } = await axiosInstance.put(`${id}`, { isFollow: isFollow, followers: newFollowersCount }); 
+    return data;
+  } catch (error) {
+    throw new Error(error); 
+  }
+};
