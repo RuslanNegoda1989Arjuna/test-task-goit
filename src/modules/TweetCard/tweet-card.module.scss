@@ -18,27 +18,37 @@
 // }
 
 .avatarka {
+  
+    position: absolute;
+    left: 150px;
+    top: 178px; 
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
+                inset 0px -2.19582px 4.39163px #AE7BE3,
+                inset 0px 4.39163px 3.29372px #FBF8FF;
+    }
+}
+.avatarWrapper {
+    position: relative;
     width: 80px;
     height: 80px;
+    background-color: #EBD8FF;
+    border: 8px solid #EBD8FF;
     border-radius: 50%;
-    border: 2px solid #000;
-    position: absolute;
-        left: 150px;
-        top: 178px;
+    overflow: hidden;
 }
-
-.avatarWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.avatarImage {
     width: 100%;
     height: 100%;
-}
-
-.avatarImage {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    object-fit: cover;
 }
 
 .tweets {

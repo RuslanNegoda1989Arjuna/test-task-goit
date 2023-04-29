@@ -1,7 +1,6 @@
 import HeaderImage from "../../shared/components/HeaderImage/HeaderImage"
 import Logo from "../../shared/components/Logo/Logo"
 import styles from './tweet-card.module.scss'
-import Avatar from '../../images/Boy.png';
 import { useEffect, useState } from "react";
 import fetchUsers from "../../tools/Api";
 
