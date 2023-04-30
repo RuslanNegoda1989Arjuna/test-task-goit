@@ -7,8 +7,9 @@ import OneCard from "../OneCard/OneCard";
 
 
 const TweetCards = () => {
-    const [numFollowers, setNumFollowers] = useState([]);
+    const [users, setUsers] = useState([]);
     const [numPerPage, setNumPerPage] = useState(3);
+    const [filter, setFilter] = useState('show all');
 
 
 useEffect(() => {
@@ -17,7 +18,7 @@ useEffect(() => {
         const allUsers = fetchAllUsers();
 
         allUsers.then(data => {
-        return setNumFollowers(data);
+        return setUsers(data);
       });
     } catch (error) {
       console.log(error.message)
@@ -26,10 +27,10 @@ useEffect(() => {
     
 
 const handleClick = useCallback( async (id, isFollow) => {
-  const updatedFollowers = isFollow ? parseInt(numFollowers.find((card) => card.id === id).followers) - 1 : parseInt(numFollowers.find((card) => card.id === id).followers) + 1;
+  const updatedFollowers = isFollow ? parseInt(users.find((card) => card.id === id).followers) - 1 : parseInt(users.find((card) => card.id === id).followers) + 1;
   try {
     await putIsFollow(id, !isFollow, updatedFollowers);
-    setNumFollowers((prevState) =>
+    setUsers((prevState) =>
       prevState.map((card) => {
         if (card.id === id) {
           return {
@@ -44,7 +45,7 @@ const handleClick = useCallback( async (id, isFollow) => {
   } catch (error) {
     console.log(error);
   }
-    },[numFollowers]);
+    },[users]);
     
      const handleLoadMore = () => {
     setNumPerPage(numPerPage + 3);
@@ -53,7 +54,7 @@ const handleClick = useCallback( async (id, isFollow) => {
     return (<>
         <Link className={styles.goback} to='/'>GoBack</Link>
         <ul className={styles.list}>              
-            {numFollowers.slice(0, 0 + numPerPage).map(({ id, tweets, followers, isFollow, avatar }) => {
+            {users.slice(0, 0 + numPerPage).map(({ id, tweets, followers, isFollow, avatar }) => {
               return (<OneCard key={id}
                 id={id}
                 tweets={tweets}
@@ -64,7 +65,7 @@ const handleClick = useCallback( async (id, isFollow) => {
               />)
                 })}
         </ul>
-        {numPerPage + 0 < numFollowers.length && (
+        {numPerPage + 0 < users.length && (
             <div className={styles.btnWrapper}>
                 <button className={styles.loadMore} onClick={handleLoadMore}>Load More</button>
             </div>
