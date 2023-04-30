@@ -1,5 +1,5 @@
 
-import TweetCard from "../../modules/TweetCard/TweetCard";
+import TweetCard from "../../modules/TweetCards/TweetCards";
 
 const TweetsPage = () => {
     return (
