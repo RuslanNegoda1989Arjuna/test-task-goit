@@ -1,10 +1,10 @@
 
-import TweetCard from "../../modules/TweetCards/TweetCards";
+import TweetCards from "../../modules/TweetCards/TweetCards";
 
 const TweetsPage = () => {
     return (
         <div className="container">
-            <TweetCard/>
+            <TweetCards/>
         </div>
     )
 }

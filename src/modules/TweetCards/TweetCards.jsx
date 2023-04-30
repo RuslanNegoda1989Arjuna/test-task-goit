@@ -1,12 +1,12 @@
 import styles from './tweet-card.module.scss'
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { fetchAllUsers, putIsFollow } from "../../tools/Api";
 import { Link } from "react-router-dom";
 import OneCard from "../OneCard/OneCard";
 
 
 
-const TweetCard = () => {
+const TweetCards = () => {
     const [numFollowers, setNumFollowers] = useState([]);
     const [numPerPage, setNumPerPage] = useState(3);
 
@@ -25,7 +25,7 @@ useEffect(() => {
 }, []);
     
 
-const handleClick = async (id, isFollow) => {
+const handleClick = useCallback( async (id, isFollow) => {
   const updatedFollowers = isFollow ? parseInt(numFollowers.find((card) => card.id === id).followers) - 1 : parseInt(numFollowers.find((card) => card.id === id).followers) + 1;
   try {
     await putIsFollow(id, !isFollow, updatedFollowers);
@@ -44,7 +44,7 @@ const handleClick = async (id, isFollow) => {
   } catch (error) {
     console.log(error);
   }
-    };
+    },[numFollowers]);
     
      const handleLoadMore = () => {
     setNumPerPage(numPerPage + 3);
@@ -76,4 +76,4 @@ const handleClick = async (id, isFollow) => {
     )
 }
 
-export default TweetCard
+export default TweetCards
