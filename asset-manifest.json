@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/test-task-goit/static/css/main.92f5d438.css",
-    "main.js": "/test-task-goit/static/js/main.f5cfb945.js",
-    "static/media/main.png": "/test-task-goit/static/media/main.86562350dcaa714a1442.png",
-    "static/media/alexander-shatov-k1xf2D7jWUs-unsplash.jpg": "/test-task-goit/static/media/alexander-shatov-k1xf2D7jWUs-unsplash.f37150ca2fe2aae9d0c9.jpg",
-    "index.html": "/test-task-goit/index.html",
-    "main.92f5d438.css.map": "/test-task-goit/static/css/main.92f5d438.css.map",
-    "main.f5cfb945.js.map": "/test-task-goit/static/js/main.f5cfb945.js.map"
+    "main.css": "/tweets-cards/static/css/main.17dc8388.css",
+    "main.js": "/tweets-cards/static/js/main.244f1eb4.js",
+    "static/media/main.png": "/tweets-cards/static/media/main.86562350dcaa714a1442.png",
+    "static/media/alexander-shatov-k1xf2D7jWUs-unsplash.jpg": "/tweets-cards/static/media/alexander-shatov-k1xf2D7jWUs-unsplash.f37150ca2fe2aae9d0c9.jpg",
+    "index.html": "/tweets-cards/index.html",
+    "main.17dc8388.css.map": "/tweets-cards/static/css/main.17dc8388.css.map",
+    "main.244f1eb4.js.map": "/tweets-cards/static/js/main.244f1eb4.js.map"
   },
   "entrypoints": [
-    "static/css/main.92f5d438.css",
-    "static/js/main.f5cfb945.js"
+    "static/css/main.17dc8388.css",
+    "static/js/main.244f1eb4.js"
   ]
 }
